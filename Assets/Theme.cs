@@ -26,9 +26,9 @@ using UnityEngine;
     // 魔法用の関数
     public void Magic(int a)
     {
-            if (mp >= 5)
+            if (mp >= a)
             {
-                // mpが5以上だった場合、mpを5減らす
+                // mpがa以上だった場合、mpをa減らす
                 mp -= a;
                 // 表示する
                 Debug.Log("魔法攻撃をした。残りMPは " + mp);
