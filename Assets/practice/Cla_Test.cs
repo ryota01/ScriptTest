@@ -14,6 +14,7 @@ public class Cla_Test : MonoBehaviour {
         midboss.Attack();
         // 防御用の関数を呼び出す
         midboss.Defence(5);
+
     }
 	
 	// Update is called once per frame

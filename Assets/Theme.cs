@@ -26,12 +26,10 @@ using UnityEngine;
     // 魔法用の関数
     public void Magic(int a)
     {
-        for (int i = a; i >= 0; i--) {
-
             if (mp >= 5)
             {
                 // mpが5以上だった場合、mpを5減らす
-                mp -= 5;
+                mp -= a;
                 // 表示する
                 Debug.Log("魔法攻撃をした。残りMPは " + mp);
             }
@@ -41,14 +39,35 @@ using UnityEngine;
             }
         }
     }
-}
 
-    public class Theme2 : MonoBehaviour
+    public class Theme : MonoBehaviour
     {
 
         // Use this for initialization
         void Start()
         {
+
+        Debug.Log("通常課題");
+
+        // 配列を初期化する
+        int[] array = { 10, 20, 30, 40, 50 };
+
+        // 配列の要素数のぶんだけ処理を繰り返す
+        for (int i = 0; i < array.Length; i++)
+        {
+            // 配列の要素を表示する
+            Debug.Log(array[i]);
+        }
+
+        // for文を使って配列の各要素の値を逆順で表示
+        for (int i = array.Length - 1; i >= 0; i--)
+        {
+            // 配列の要素を表示する
+            Debug.Log(array[i]);
+        }
+
+        Debug.Log("発展課題");
+
         // Bossクラスの変数を宣言してインスタンスを代入
         Boss lastboss = new Boss();
 
@@ -56,8 +75,11 @@ using UnityEngine;
         lastboss.Attack();
         // 防御用の関数を呼び出す
         lastboss.Defence(3);
-        // 魔法用の関数を呼び出す
-        lastboss.Magic(11);
+        // 魔法用の関数を11回呼び出す
+        for (int i = 0; i < 11; i++)
+        {
+            lastboss.Magic(5);
+        }
 
     }
         // Update is called once per frame
